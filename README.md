@@ -1,2 +1,2 @@
 # Py_algorithm
-set for BBC python route
+for python route
