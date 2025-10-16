@@ -4,6 +4,7 @@
 # 方法一：暴力写法，时间复杂度不符合要求------------------------------
 n = 5
 q = list(map(int,input("比如输入3 1 2 4 5\n").split()))
+# 或者这样li = [int(x) for x in input().split()]
 for i in range(0, n-1):              # 选取非最后一个数
     for j in range(i+1, n):          # 把它与后边其他比大小
         if q[i] > q[j]:              # 若比后边大则交换
