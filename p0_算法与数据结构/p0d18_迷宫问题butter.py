@@ -29,23 +29,23 @@ def print_r(path):
     curNode = path[-1]
     realpath = []     # 到达终点的路径
 
-    while curNode[2] != -1:
+    while curNode[2] != -1:       # 这个-1也是同理
         realpath.append(curNode[0:2])
         curNode = path[curNode[2]]
 
     realpath.append(curNode[0:2])     # 加入起点
-    realpath.reverse()                # 改变原有列表？？？13：31    
+    realpath.reverse()                # 改变原有列表
     for node in realpath:
-        print(node)
+        print(node, end = "--")
 
 def maze_path_queue(x1, y1, x2, y2):
     queue = deque()
-    queue.append((x1, y1, -1))    # 起点入队,坐标以及位置
+    queue.append((x1, y1, -1))    # 起点入队,坐标以及位置,这个-1是为后边len(path)包的饺子
     path = []
     while len(queue) > 0:         # 只要队不空就是有路
         curNode = queue.pop()
         # 队首出队
-        path.append(curNode)
+        path.append(curNode)      # 将先前走过的路径加入到path中,而不是保留在队列中
         if curNode[0] == x2 and curNode[1] == y2:
             # 若到达终点
             print_r(path)
