@@ -26,5 +26,6 @@ def hanoi(n, a, b, c):
         print("moving from %s to %s" % (a, c))
         hanoi(n - 1, b, a, c)  # 第三步
 hanoi(3,"a", "b", "c")
+
 # 不懂可以n=2推演一下
 # %这个东西是旧版本的字符串格式化
